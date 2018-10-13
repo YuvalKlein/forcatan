@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Catan Dice</title>
+	<link rel="stylesheet" type="text/css" href="catanDice.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+	<h1 id="title"> 
+		<br>
+		<span id="colorDisplay">Catan Dice</span> 
+		<br>
+		</h1>
+
+	<div id="info">
+		<h2 id="textInfo">How long will be each turn?</h2>
+		<form>
+			<select id="selector">
+				<option value=30>30 seconds</option>
+				<option value=60>60 seconds</option>
+				<option value=90>90 seconds</option>
+			</select>
+			<button id="selectorButton">ok</button>
+		</form>
+	</div>
+
+	<!-- <div class= "stripe">
+		<button id="reset"></button>
+		<span id="message"></span>
+		<button id="whoStarts" class="mode"></button>
+	</div> -->
+
+	<div class= "container">
+		<div class="dice">
+			<h1 id="diceText1">0</h1>
+		</div>
+		<div class="dice">
+			<h1 id="diceText2">0</h1>
+		</div>	
+		<button id="roll">Roll the dice</button>
+		<div>
+			<h1 id="timer">00:00</h1>
+		</div>
+		<div>
+			<button id="reset">New Game</button>
+		</div>
+	</div>
+		
+	<div>
+		<span id="message">Statistics</span>
+	</div>
+
+	<table id="table">
+		<tr>
+		  <th>Number</th>
+		  <th>times</th> 
+		  <th>%</th>
+		</tr>
+		<tr id="tr">
+		  <td id="diceNum">2</td>
+		  <td id="times">0</td> 
+		  <td id="persentage">%</td>
+		</tr>
+	  </table>
+
+<script type="text/javascript" src="catanDice.js"></script>
+</body>
+</html>
