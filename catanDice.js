@@ -13,6 +13,8 @@ let times = document.querySelector("#times");
 let persentage = document.querySelector("#persentage");
 let tr = document.querySelector("#tr");
 let counterTime = selector.value;
+let diceResult = 0;
+let rolls = 0;
 
 
 //COUNTER
@@ -25,7 +27,7 @@ let counterTime = selector.value;
 // 	counter = setTimeout(countDown(counterTime, timer),1000);
 // }
 
-// STATISTICS
+// Create Table
 for(let i = 2; i <= 12; i++){
 	tr.append("<td id='diceNum'>" + i + "</td>" +
 	"<td id='times'>" +  + "</td>" + 
@@ -37,11 +39,12 @@ for(let i = 2; i <= 12; i++){
 roll.addEventListener("click", function(){
 	diceText1.textContent = rolling();
 	diceText2.textContent = rolling();
-	result = Number(diceText1.textContent) + Number(diceText2.textContent);
-	return result
+	rolls += 1;
+	diceResult = Number(diceText1.textContent) + Number(diceText2.textContent);
+
 })
 
-function rolling(){
+const rolling = () => {
 	var random = Math.floor(Math.random() * 6 + 1);
 	return random;
 }
