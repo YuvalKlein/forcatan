@@ -19,6 +19,20 @@ body {
     position: relative; /* If you want text inside of it */
 }
 
+#timer {
+	display: inline-block;
+}
+
+#pause {
+	display: inline-block;
+	margin-left:100px;
+}
+
+#pause {
+	display: inline-block;
+	margin-left:100px;
+}
+
 #container {
 	margin: 20px auto;
 	max-width: 600px;
