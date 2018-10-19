@@ -47,7 +47,7 @@ function countDown() {
 	} else {
 		counterTime = turnTime;
 		startTimer = setTimeout(countDown,1000);
-		go.play();
+		timeFinished.play();
 	}
 }
 
