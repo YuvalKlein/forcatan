@@ -1,3 +1,4 @@
+
 let selector = document.querySelector("#selector");
 let selectorButton = document.querySelector("selectorButton");
 let info = document.querySelector("#info");
@@ -18,6 +19,18 @@ let diceResult = 0;
 let rolls = 0;
 let counterTime = 0;
 let startTimer;
+// SOUNDS
+const timeFinished = new Howl({
+	src: ['public/src/time.wav']
+});
+const fiveSecs = new Howl({
+	src: ['public/src/Tick Tock.mp3']
+});
+const go = new Howl({
+	src: ['public/src/go.wav']
+});
+
+
 
 //COUNTER
 selector.addEventListener("change", function(){
@@ -28,15 +41,29 @@ function countDown() {
 	timer.innerHTML  = counterTime;
 	counterTime--;
 	if(counterTime > 0){
-		startTimer = setTimeout(countDown,1000);	
+		startTimer = setTimeout(countDown,1000);
+	// } else if(counterTime = 5){
+	// 	fiveSecs.play();
 	} else {
 		counterTime = turnTime;
 		startTimer = setTimeout(countDown,1000);
+		go.play();
 	}
 }
 
+// sounds();
+
+// const sounds = () => {
+// 	if(timer.innerHTML = 1){
+// 		timeFinished.play();
+// 	} else if(counterTime = 5){
+// 		fiveSecs.play();
+// 	}
+// };
+
 // ROLLING
 roll.addEventListener("click", function(){
+	go.play();
 	diceText1.textContent = rolling();
 	diceText2.textContent = rolling();
 	rolls += 1;
@@ -49,7 +76,7 @@ roll.addEventListener("click", function(){
 		counterTime = turnTime;
 		countDown();
 	}
-})
+});
 
 const rolling = () => {
 	var random = Math.floor(Math.random() * 6 + 1);
